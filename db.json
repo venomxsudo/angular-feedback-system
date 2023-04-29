@@ -1,0 +1,28 @@
+{
+  "feedbacks": [
+    {
+      "name": "Om Sangani",
+      "age": 19,
+      "city": "Surat",
+      "area": "Punagam",
+      "policeStation": "Puna Police Chowki",
+      "policeman": "N M jhala",
+      "feedback": "Nice and Clean",
+      "registeredFIR": "no",
+      "rating": "4",
+      "id": 1
+    },
+    {
+      "name": "Yash ",
+      "age": 19,
+      "city": "Aravalli",
+      "area": "puna",
+      "policeStation": "Puna Police Chowki",
+      "policeman": "n m jhala",
+      "feedback": "nice and clean",
+      "registeredFIR": "no",
+      "rating": "2",
+      "id": 2
+    }
+  ]
+}

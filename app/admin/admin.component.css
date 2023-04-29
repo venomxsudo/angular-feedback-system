@@ -1,0 +1,106 @@
+.bg {
+  background: linear-gradient(333deg, #9ecde780, #9b6fd480, #3a9bc080);
+  background-size: 400% 400%;
+  animation: AnimationName 8s ease infinite;
+  height: 100vh;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+@keyframes AnimationName {
+  0%{background-position:7% 0%}
+  50%{background-position:94% 100%}
+  100%{background-position:7% 0%}
+}
+
+.box {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 20px;
+  margin-top: 100px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+input[type="text"],
+input[type="password"] {
+  display: block;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+}
+
+button {
+  display: block;
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #666666;
+}
+
+p {
+  color: #464646;
+  margin-bottom: 40px;
+}
+.table-data{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+h2{
+  text-align: center;
+  color: #333333;
+  margin-bottom: 20px;
+}
+table {
+  margin: auto;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+table tr:nth-child(odd) {
+  background-color: #e6e6e6;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #3d4462;
+  color: white;
+  text-align: left;
+}

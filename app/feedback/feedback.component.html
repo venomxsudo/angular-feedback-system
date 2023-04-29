@@ -1,0 +1,161 @@
+<div class="overlay" #overlay></div>
+<div class="bg"></div>
+<div class="menu">
+  <!-- Button to trigger popup -->
+<button class="popup-button" (click)="showPopup()">Click Here to Get Names of the Top Policemen of your City</button>
+
+<!-- Popup card -->
+<div class="popup-card" [ngClass]="{ 'show': showingPopup }">
+  <div class="popup-content">
+    <h2>Select City</h2>
+    <form>
+      <label for="city">City:</label>
+      <select id="city" name="city" [(ngModel)]="selectedCity">
+        <option value="" disabled selected>Select a city</option>
+        <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+      </select>
+      <button type="button" (click)="getPolicemen()">Submit</button>
+    </form>
+    <ul>
+      <h2 *ngIf="getpolice">Top Policemen</h2>
+      <li *ngFor="let policeman of policemen">
+        {{ policeman.name }} - {{ policeman.stars }} stars
+      </li>
+    </ul>
+  </div>
+</div>
+
+</div>
+<div class="container">
+  <h1>Citizen Feedback System for Gujarat Police</h1>
+  <form (ngSubmit)="submitFeedback()">
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="name"
+        name="name"
+        required
+        autocomplete="off"
+        autofocus="on"
+        autocapitalize="on"
+      />
+    </div>
+    <div class="form-group">
+      <label>Age</label>
+      <input
+        type="number"
+        class="form-control"
+        [(ngModel)]="age"
+        name="age"
+        required
+        autocomplete="off"
+      />
+    </div>
+    <div class="form-group">
+      <label>City</label>
+      <select class="form-control" [(ngModel)]="city" name="city" required>
+        <option value="Ahmedabad">Ahmedabad</option>
+        <option value="Amreli">Amreli</option>
+        <option value="Anand">Anand</option>
+        <option value="Aravalli">Aravalli</option>
+        <option value="Banaskantha">Banaskantha</option>
+        <option value="Bharuch">Bharuch</option>
+        <option value="Bhavnagar">Bhavnagar</option>
+        <option value="Botad">Botad</option>
+        <option value="Chhota Udaipur">Chhota Udaipur</option>
+        <option value="Dahod">Dahod</option>
+        <option value="Dang">Dang</option>
+        <option value="Devbhoomi Dwarka">Devbhoomi Dwarka</option>
+        <option value="Gandhinagar">Gandhinagar</option>
+        <option value="Gir Somnath">Gir Somnath</option>
+        <option value="Jamnagar">Jamnagar</option>
+        <option value="Junagadh">Junagadh</option>
+        <option value="Kheda">Kheda</option>
+        <option value="Kutch">Kutch</option>
+        <option value="Mahisagar">Mahisagar</option>
+        <option value="Mehsana">Mehsana</option>
+        <option value="Morbi">Morbi</option>
+        <option value="Narmada">Narmada</option>
+        <option value="Navsari">Navsari</option>
+        <option value="Panchmahal">Panchmahal</option>
+        <option value="Patan">Patan</option>
+        <option value="Porbandar">Porbandar</option>
+        <option value="Rajkot">Rajkot</option>
+        <option value="Sabarkantha">Sabarkantha</option>
+        <option value="Surat">Surat</option>
+        <option value="Surendranagar">Surendranagar</option>
+        <option value="Tapi">Tapi</option>
+        <option value="Vadodara">Vadodara</option>
+        <option value="Valsad">Valsad</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Area</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="area"
+        name="area"
+        required
+        autocomplete="off"
+      />
+    </div>
+    <div class="form-group">
+      <label>Police Station Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="policeStation"
+        name="policeStation"
+        required
+        autocomplete="off"
+      />
+    </div>
+    <div class="form-group">
+      <label>Policeman Name you want to Appreciate</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="policeman"
+        name="policeman"
+        autocomplete="off"
+      />
+    </div>
+    <div class="form-group">
+      <label>Feedback</label>
+      <textarea
+        class="form-control"
+        [(ngModel)]="feedback"
+        name="feedback"
+        required
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Have you registered any FIR?</label>
+      <select
+        class="form-control"
+        [(ngModel)]="registeredFIR"
+        name="registeredFIR"
+        required
+      >
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Star Rating out of 5</label>
+      <select class="form-control" [(ngModel)]="rating" name="rating" required>
+        <option value="1">1 star</option>
+        <option value="2">2 stars</option>
+        <option value="3">3 stars</option>
+        <option value="4">4 stars</option>
+        <option value="5">5 stars</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <h3 *ngIf="formdone">Feedback Submitted Successfully</h3>
+</div>
